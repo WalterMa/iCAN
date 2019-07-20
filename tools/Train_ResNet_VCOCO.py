@@ -57,8 +57,15 @@ if __name__ == '__main__':
     # output directory where the models are saved
     output_dir = cfg.ROOT_DIR + '/Weights/' + args.model + '/'
 
+    iCAN_Early_flag = 0
+    if args.model == 'iCAN_ResNet50_VCOCO_Bare':
+        from networks.iCAN_ResNet50_VCOCO_Bare import ResNet50
+        iCAN_Early_flag = 0
     if args.model == 'iCAN_ResNet50_VCOCO':
         from networks.iCAN_ResNet50_VCOCO import ResNet50
+        iCAN_Early_flag = 0
+    if args.model == 'iCAN_ResNet50_VCOCO_V1':
+        from networks.iCAN_ResNet50_VCOCO_V1 import ResNet50
         iCAN_Early_flag = 0
     if args.model == 'iCAN_ResNet50_VCOCO_Early':
         from networks.iCAN_ResNet50_VCOCO_Early import ResNet50
