@@ -74,8 +74,12 @@ if __name__ == '__main__':
     tfconfig.gpu_options.allow_growth=True
     sess = tf.Session(config=tfconfig)
 
-    if args.model == 'iCAN_ResNet50_VCOCO_Bare':
-        from networks.iCAN_ResNet50_VCOCO_Bare import ResNet50
+    if args.model == 'iCAN_ResNet50_VCOCO_NoAtt':
+        from networks.iCAN_ResNet50_VCOCO_NoAtt import ResNet50
+    if args.model == 'iCAN_ResNet50_VCOCO_NoSP':
+        from networks.iCAN_ResNet50_VCOCO_NoSP import ResNet50
+    if args.model == 'iCAN_ResNet50_VCOCO_NoAttSP':
+        from networks.iCAN_ResNet50_VCOCO_NoAttSP import ResNet50
     if args.model == 'iCAN_ResNet50_VCOCO_V1':
         from networks.iCAN_ResNet50_VCOCO_V1 import ResNet50
     if args.model == 'iCAN_ResNet50_VCOCO':
